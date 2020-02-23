@@ -25,11 +25,21 @@ func main() {
 		fmt.Println("hello")
 	}
 	a()
-	var xs = map[int]func() int{
-		1: func() int { return 10 },
-		2: func() int { return 20 },
-		3: func() int { return 30 },
-	}
+	// var xs = map[int]func() int{
+	// 	1: func() int { return 10 },
+	// 	2: func() int { return 20 },
+	// 	3: func() int { return 30 },
+	// }
+
+	tt := 3
+
+	var p *int = &tt
+	fmt.Printf("tt: %v %x value: %v", p, &tt, tt)
+	pp := new(person)
+	pp.age = 2
+	pp.name = "lzzz"
+	fmt.Printf("%v", pp)
+
 }
 
 func fizzBuzz() {
@@ -59,4 +69,9 @@ func printlit(x int) {
 
 func callback(y int, f func(int)) {
 	f(y)
+}
+
+type person struct {
+	name string
+	age  int
 }
